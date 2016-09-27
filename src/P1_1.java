@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 
 /**
@@ -7,6 +8,9 @@ import java.util.ArrayList;
  * 20150717 조영걸
  */
 public class P1_1 {
+    private static final String YES = new String("네\n".getBytes(),  Charset.defaultCharset());
+    private static final String NO = new String("아니요\n".getBytes(),  Charset.defaultCharset());
+
     public static void main(String[] args){
         try {
 
@@ -20,7 +24,7 @@ public class P1_1 {
 
             fileHandler.clearOutput();
             for(ArrayList<String> s : input){
-                fileHandler.appendToOutput(DFA.isAccepted(dfa, s) ? "네\n" : "아니요\n");
+                fileHandler.appendToOutput(DFA.isAccepted(dfa, s) ? YES : NO);
             }
         }catch(IOException e){
             e.printStackTrace();
