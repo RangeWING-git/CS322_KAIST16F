@@ -1,8 +1,10 @@
+package cs322.common;
+
 import java.util.ArrayList;
 
 /**
  * Created by RangeWING on 2016-09-20.
- * Definition of State
+ * Definition of cs322.common.State
  */
 public class State {
     private String name;
@@ -37,7 +39,7 @@ public class State {
 
     @Override
     public String toString(){
-        return "State("+name+")";
+        return "cs322.common.State("+name+")";
     }
 
     @Override

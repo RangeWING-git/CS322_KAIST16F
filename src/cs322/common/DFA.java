@@ -1,8 +1,10 @@
+package cs322.common;
+
 import java.util.*;
 
 /**
  * Created by RangeWING on 2016-09-20.
- * Definition of DFA and check/accepted
+ * Definition of cs322.common.DFA and check/accepted
  */
 public class DFA {
     protected Set<State> Q, F;
@@ -38,7 +40,7 @@ public class DFA {
         this.q0 = q0;
     }
     /**
-     * Checks whether the DFA is valid by checking all the state assigned is in the set Q
+     * Checks whether the cs322.common.DFA is valid by checking all the state assigned is in the set Q
      * @return true when valid
      */
     public boolean check(){
@@ -52,8 +54,8 @@ public class DFA {
     }
 
     /**
-     * Checks if the input sequence x is accepted by DFA
-     * @param dfa input DFA
+     * Checks if the input sequence x is accepted by cs322.common.DFA
+     * @param dfa input cs322.common.DFA
      * @param x input sequence
      * @return true when accepted
      */
@@ -88,39 +90,5 @@ public class DFA {
                 "T = " + Ts;
     }
 
-    static class Pair<K, V> implements Map.Entry<K, V> {
-        private K key;
-        private V value;
 
-        public Pair(K key, V value){
-            this.key = key;
-            this.value = value;
-        }
-
-        @Override
-        public boolean equals(Object o){
-            return (o instanceof Pair && ((Pair)o).getKey().equals(key) && ((Pair)o).getValue().equals(value));
-        }
-
-        @Override
-        public K getKey(){
-            return key;
-        }
-
-        @Override
-        public V getValue(){
-            return value;
-        }
-
-        @Override
-        public int hashCode(){
-            return key.hashCode() + value.hashCode();
-        }
-
-        @Override
-        public V setValue(V value){
-            this.value = value;
-            return this.value;
-        }
-    }
 }

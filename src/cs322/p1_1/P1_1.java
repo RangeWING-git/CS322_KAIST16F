@@ -1,3 +1,7 @@
+package cs322.p1_1;
+
+import cs322.common.DFA;
+
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -13,15 +17,16 @@ public class P1_1 {
 
     public static void main(String[] args){
         try {
-
-            FileHandler fileHandler = FileHandler.createHandler(args);
-            DFA dfa = fileHandler.readDFA();
-            ArrayList<ArrayList<String>> input = fileHandler.readInput();
+            FileHandler_P1_1 fileHandler = FileHandler_P1_1.createHandler(args);
+            DFA dfa = fileHandler.readDFA(); //read cs322.common.DFA
+            ArrayList<ArrayList<String>> input = fileHandler.readInput(); //read input
+            //check whether all symbols in cs322.common.DFA are in dfa.Q
             if(!dfa.check()){
-                System.out.println("Input DFA is wrong: there are some symbols not in Σ");
+                System.out.println("Input cs322.common.DFA is wrong: there are some symbols not in Σ");
                 System.exit(1);
             }
 
+            //check if each input string is accepted and write the result.
             fileHandler.clearOutput();
             for(ArrayList<String> s : input){
                 fileHandler.appendToOutput(DFA.isAccepted(dfa, s) ? YES : NO);
