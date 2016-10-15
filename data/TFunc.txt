@@ -9,8 +9,10 @@ U,j,A
 OUAI,rq,K
 OUAI,s,N
 OUAI,f,R
-OUAI,eadtowczxvgRT,L
+OUAI,eadtwczxvgRT,L
 OUAI,EQW,V
+O,o,I
+U,p,I
 K,t,L
 K,rsefaqdwczxvgREQTW,V
 N,wg,L

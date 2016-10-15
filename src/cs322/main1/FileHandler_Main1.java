@@ -52,6 +52,8 @@ public class FileHandler_Main1 extends FileHandler {
         if(file.exists()) return file;
         file = new File("../../"+path);
         if(file.exists()) return file;
+        file = new File("../../../"+path);
+        if(file.exists()) return file;
         return null;
     }
 

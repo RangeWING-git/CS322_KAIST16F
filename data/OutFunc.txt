@@ -14,10 +14,12 @@ L,ybloOpP,9
 O,k,2
 OUA,l,2
 U,j,2
+O,o,2
+U,p,2
 OUAI,rq,4
 OUAI,s,4
 OUAI,f,4
-OUAI,eadtowczxvgRT,4
+OUAI,eadtwczxvgRT,4
 OUAI,EQW,8
 K,t,5
 K,rsefaqdwczxvgREQTW,6
