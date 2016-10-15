@@ -1,4 +1,4 @@
-package cs322.common;
+package cs322.main1;
 
 import java.util.ArrayList;
 
@@ -6,31 +6,27 @@ import java.util.ArrayList;
  * Created by RangeWING on 2016-09-20.
  * Definition of cs322.common.State
  */
-public class State {
-    private String name;
+public class HState {
+    private Character name;
     private Object output = null;
-    public State(String name){
+    public HState(Character name){
         this.name = name;
-    }
-    public State(String name, Object output) {
-        this.name = name;
-        this.output = output;
     }
 
     @Override
     public boolean equals(Object o){
-        if(o instanceof State){
-            State s = (State) o;
+        if(o instanceof HState){
+            HState s = (HState) o;
             return this.name.equals(s.getName());
         }
         return false;
     }
 
-    public String getName(){
+    public Character getName(){
         return name;
     }
 
-    public void setName(String name){
+    public void setName(Character name){
         this.name = name;
     }
 
@@ -42,17 +38,22 @@ public class State {
         return output;
     }
 
-    public static ArrayList<State> makeList(String[] names){
-        ArrayList<State> list = new ArrayList<>(names.length);
-        for(String name : names){
-            list.add(new State(name));
+    public static ArrayList<HState> makeList(String namesString){
+        char[] names = namesString.toCharArray();
+        ArrayList<HState> list = new ArrayList<>(names.length);
+        for(Character name : names){
+            list.add(new HState(name));
         }
         return list;
     }
 
+    public static HState get(char c){
+        return new HState(c);
+    }
+
     @Override
     public String toString(){
-        return "cs322.common.State("+name+")";
+        return "HState("+name+")";
     }
 
     @Override

@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * Created by RangeWING on 2016-09-29.
  */
-class Pair<K, V> implements Map.Entry<K, V> {
+public class Pair<K, V> implements Map.Entry<K, V> {
     private K key;
     private V value;
 

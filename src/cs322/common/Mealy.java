@@ -40,6 +40,7 @@ public class Mealy {
         Pair<State, String> pair = new Pair<>(fromState, symbol);
         L.put(pair, outString);
     }
+
     public void setQ0(State q0){
         this.q0 = q0;
     }

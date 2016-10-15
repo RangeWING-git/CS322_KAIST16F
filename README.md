@@ -1,4 +1,4 @@
-#CS322 16F Project
+# CS322 16F Project
 * Author: 20150717 조영걸 [전산학부\] (rangewing@kaist.ac.kr)
 * Used Language: Java (1.8)
 * Written and Tested Environment
@@ -7,18 +7,18 @@
 * Charset: UTF-8
 * Last Update: Oct 4th, 2016
 
-##예비 프로젝트 1-1
+## 예비 프로젝트 1-1
 이 프로그램은 DFA를 읽어 class DFA의 인스턴스로 저장하고,
 input의 각 string을 DFA에 입력했을 때 accept되는지 검사하여 '예' 또는 '아니요'를 output에 출력한다.
 screenshots 폴더의 스크린샷을 참조하면 된다.
 
-##예비 프로젝트 1-2
+## 예비 프로젝트 1-2
 이 프로그램은 Mealy Machine를 읽어 class Mealy의 인스턴스로 저장하고,
 input의 각 string을 Mealy Machine에 입력했을 때 출력되는 문자열을 output에 출력한다.
 존재하지 않는 path이면 'No path exists!'를 출력한다.
 screenshots 폴더의 스크린샷(Execution_P1_2)을 참조하면 된다.
 
-###Files
+### Files
 * root
     * src (source codes)
         * cs322.common
@@ -50,6 +50,7 @@ screenshots 폴더의 스크린샷(Execution_P1_2)을 참조하면 된다.
 At the src folder,
 * Pre-project 1-1: `$ javac cs322/p1_1/P1_1.java`
 * Pre-project 1-2: `$ javac cs322/p1_2/P1_2.java`
+* You should append `-encoding UTF-8` option when compiling on Windows.
 
 ### How to execute
 Where the class files exists (e.g. bin folder or src folder after compile; look at the screenshot),
