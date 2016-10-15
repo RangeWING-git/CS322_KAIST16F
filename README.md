@@ -4,8 +4,9 @@
 * Written and Tested Environment
     * Ubuntu 14.04.5 LTS, GNU/Linux 4.4.0-36-generic x86_64
     * JDK 1.8.0_65, JRE 1.8.0_101
+    * Also tested on Windows 10 Pro, x64, JDK 1.8.0_65, JRE 1.8.0_77
 * Charset: UTF-8
-* Last Update: Oct 4th, 2016
+* Last Update: Oct 16th, 2016
 
 ## 예비 프로젝트 1-1
 이 프로그램은 DFA를 읽어 class DFA의 인스턴스로 저장하고,
@@ -17,6 +18,14 @@ screenshots 폴더의 스크린샷을 참조하면 된다.
 input의 각 string을 Mealy Machine에 입력했을 때 출력되는 문자열을 output에 출력한다.
 존재하지 않는 path이면 'No path exists!'를 출력한다.
 screenshots 폴더의 스크린샷(Execution_P1_2)을 참조하면 된다.
+
+## 본 프로젝트 1
+이 프로그램은 키보드로 입력하는 문자를 읽어 한글로 조합해 출력한다.
+초성우선 모드와 받침우선 모드를 지원한다.
+Java에서 Console 실시간 input을 지원하지 않는 관계로 input 후 엔터를 누르면 output이 출력되는 형태로 제작하였고,
+백스페이스 키는 '<'로 입력하면 된다.
+허용되지 않은 case (e.g. 모음만 입력)에서는 null을 출력한다.
+screenshots 폴더의 스크린샷(Execution_Main1)을 참조하라.
 
 ### Files
 * root
@@ -35,6 +44,10 @@ screenshots 폴더의 스크린샷(Execution_P1_2)을 참조하면 된다.
             * P1_2.java (Main)
         * cs322.main1 (Main-project 1)
             * PMain1.java (Main)
+            * FileHandler_Main1.java
+            * Hangeul.java
+            * HMealy.java
+            * HState.java
     * bin (classes)
     * screenshots
     * testcase
@@ -50,6 +63,7 @@ screenshots 폴더의 스크린샷(Execution_P1_2)을 참조하면 된다.
 At the src folder,
 * Pre-project 1-1: `$ javac cs322/p1_1/P1_1.java`
 * Pre-project 1-2: `$ javac cs322/p1_2/P1_2.java`
+* Main-project 1: `$ javac cs322/main1/PMain1.java`
 * You should append `-encoding UTF-8` option when compiling on Windows.
 
 ### How to execute
@@ -66,4 +80,9 @@ Where the class files exists (e.g. bin folder or src folder after compile; look 
   * MEALY_FILE_PATH = ./mealy.txt
   * INPUT_FILE_PATH = ./input.txt
   * OUTPUT_FILE_PATH = ./output.txt
+
+* Main-project 1:
+  `$ java cs322.main1.PMain1 <mode>`
+  * mode: 0 = 받침우선(Default), 1 = 초성우선
+  * example: `$ java cs322.main1.PMain1 0`
 
