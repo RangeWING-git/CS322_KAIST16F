@@ -65,7 +65,7 @@ public class Hangeul {
                     output.deleteCharAt(output.length()-1);
                 }
                 //String ss = ""+st+md+md2+lt+lt2 + (i < n-1 ? x.substring(i+1): "");
-                //output.append(getOutput(hMealy, ss));
+                //append(output, getOutput(hMealy, ss));
             }else if(hMealy.T.containsKey(pair)){
                 q = hMealy.T.get(pair);
                 char r = hMealy.L.get(pair);
@@ -75,7 +75,7 @@ public class Hangeul {
                     case '1': md = c; md2 = 0; break;   //중성 = 입력
                     case '2': md2 = c; break;   //중성 += 입력
                     case '3':  //받침=e, 완성, 초성=Bfr
-                        output.append(combine(st, md, md2, '0', (char)0));
+                        append(output, combine(st, md, md2, '0', (char)0));
                         st = lt;
                         md = c;
                         md2 = lt = lt2 = 0;
@@ -83,21 +83,21 @@ public class Hangeul {
                     case '4': lt = c; lt2 = 0; break;   //받침 = 입력
                     case '5': lt2 = c; break;   //받침 += 입력
                     case '6':case '7':  //받침=Bfr(완성) -> 0 / 받침=Bfr/OBfr+Bfr (완성) -> 0
-                        output.append(combine(st, md, md2, lt, lt2));
+                        append(output, combine(st, md, md2, lt, lt2));
                         st = c;
                         md = md2 = lt = lt2 = 0;
                         break;
                     case '8': // 받침=e, 완성 -> 0
-                        output.append(combine(st, md, md2, lt, (char)0));
+                        append(output, combine(st, md, md2, lt, (char)0));
                         st = c;
                         md = md2 = lt = lt2 = 0;
                         break;
                     case '9':   // 받침=e,초성=Bfr/받침=OBfr,초성=Bfr
                         if(lt2 > 0) {
-                            output.append(combine(st, md, md2, lt, (char)0));
+                            append(output, combine(st, md, md2, lt, (char)0));
                             st = lt2;
                         }else {
-                            output.append(combine(st, md, md2, '0', (char)0));
+                            append(output, combine(st, md, md2, '0', (char)0));
                             st = lt;
                         }
                         lt = 0;
@@ -109,7 +109,7 @@ public class Hangeul {
             }else return null;
         }
         if(DEBUG_MODE) System.out.println(String.format("(%c,%c,%c,%c,%c)", st, md, md2, lt, lt2));
-        output.append(combine(st, md, md2, lt, lt2));
+        append(output, combine(st, md, md2, lt, lt2));
         return output.toString();
     }
 
@@ -137,7 +137,7 @@ public class Hangeul {
                     case '0': l0.st = c; break;    //초성 = 입력
                     case '1':
                         if(l0.md > 0){
-                            output.append(combine(l0));
+                            append(output, combine(l0));
                             l0 = l1;
                             l1 = new Letter();
                         }
@@ -146,7 +146,7 @@ public class Hangeul {
                         break;   //중성 = 입력
                     case '2': l0.md2 = c; break;   //중성 += 입력
                     case '3':  //받침=e, 완성, 초성=Bfr
-                        output.append(combine(l0.st, l0.md, l0.md2, '0', (char)0));
+                        append(output, combine(l0.st, l0.md, l0.md2, '0', (char)0));
                         l0 = l1;
                         l1 = new Letter();
                         //l0.st = l0.lt;
@@ -169,7 +169,7 @@ public class Hangeul {
                         l1.st = c;
                         break;
                     case '9':   // 받침=e,초성=Bfr/받침=OBfr,초성=Bfr
-                        output.append(combine(l0));
+                        append(output, combine(l0));
                         l0 = l1;
                         l1 = new Letter();
                         l0.md = c;
@@ -178,9 +178,18 @@ public class Hangeul {
             }else return null;
         }
         if(DEBUG_MODE) {System.out.printf("%s, %s\n", l0.toString(), l1.toString()); }
-        output.append(combine(l0));
-        output.append(combine(l1));
+        append(output, combine(l0));
+        append(output, combine(l1));
         return output.toString();
+    }
+
+    private boolean append(StringBuilder sb, char c){
+        if(c > 0){
+            sb.append(c);
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public char combine(Letter l){
@@ -190,7 +199,7 @@ public class Hangeul {
     public char combine(char st, char md, char md2, char lt, char lt2){
         int f, m, l;
         try {
-            if(st == 0) return ' ';
+            if(st == 0) return 0;
             else if(md == 0) return (char)(sMap3.get(String.valueOf(st)) + '\u3130');
             f = sMap0.get(String.valueOf(st));
             m = sMap1.get(md2 > 0 ? String.valueOf(md) + String.valueOf(md2) : String.valueOf(md));

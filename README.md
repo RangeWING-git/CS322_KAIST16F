@@ -49,6 +49,7 @@ screenshots 폴더의 스크린샷(Execution_Main1)을 참조하라.
             * HMealy.java
             * HState.java
     * bin (classes)
+    * data
     * screenshots
     * testcase
         * dfa.txt
@@ -82,7 +83,8 @@ Where the class files exists (e.g. bin folder or src folder after compile; look 
   * OUTPUT_FILE_PATH = ./output.txt
 
 * Main-project 1:
-  `$ java cs322.main1.PMain1 <mode>`
+  `$ java cs322.main1.PMain1 <mode> <GUI/TUI> <datapath>`
   * mode: 0 = 받침우선(Default), 1 = 초성우선
-  * example: `$ java cs322.main1.PMain1 0`
+  * do not use datapath option, unless you cannot use the folder 'data'
+  * example: `$ java cs322.main1.PMain1 0 GUI `
 

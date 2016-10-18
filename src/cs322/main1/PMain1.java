@@ -10,9 +10,11 @@ import java.util.*;
  */
 public class PMain1 {
     public static void main(String[] args){
+        GUIManager guiManager;
+
         int mode = Hangeul.MODE_BATCHIM;
         if(args.length < 1){
-            System.out.println("USAGE: java cs322.main1.PMain1 <mode>");
+            System.out.println("USAGE: java cs322.main1.PMain1 <mode> <GUI/TUI>");
             System.out.println("mode: 0 = BATCHIM-prior, 1 = CHOSUNG-prior");
             System.out.println("Default mode = 0\n");
         }else{
@@ -42,14 +44,25 @@ public class PMain1 {
             e.printStackTrace();
         }
 
-        Scanner sc = new Scanner(System.in);
-        while(true){
-            System.out.print("Input>\t");
-            String line = sc.nextLine();
-            if(line.equals("EXIT")) { System.out.println("Exit"); break;}
-            System.out.println("Output>\t" + hangeul.getOutput(hMealy, line));
+        if(args.length > 1 && args[1].toLowerCase().equals("gui")){
+            guiManager = new GUIManager();
+            guiManager.addKeyListener(hangeul, hMealy);
+        }else {
+            Scanner sc = new Scanner(System.in);
+            while (true) {
+                System.out.print("Input>\t");
+                String line = sc.nextLine();
+                if (line.equals("EXIT")) {
+                    System.out.println("Exit");
+                    break;
+                }
+                String out = hangeul.getOutput(hMealy, line);
+                if(out != null)
+                    System.out.println("Output>\t" + hangeul.getOutput(hMealy, line));
+                else System.out.println("Not valid input");
+            }
+            sc.close();
         }
-        sc.close();
     }
 
     public static void clear(){

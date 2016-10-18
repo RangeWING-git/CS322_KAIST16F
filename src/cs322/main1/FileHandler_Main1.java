@@ -18,16 +18,20 @@ import java.util.Map;
  * R/W files
  */
 public class FileHandler_Main1 extends FileHandler {
-    protected final String TFUNC_FILE, OUTFUNC_FILE, SYMBOL_FILE_BASE;
+    protected final File DATA_PATH;
+    protected final File TFUNC_FILE, OUTFUNC_FILE;
+    protected final String SYMBOL_FILE_BASE;
 
     public FileHandler_Main1(){
-        this(null, null);
+        this(null);
     }
-    public FileHandler_Main1(String tFunc, String outFunc){
+    public FileHandler_Main1(String dataPath){
         super(null, null);
-        TFUNC_FILE = (tFunc != null) ? tFunc : "data/TFunc.txt";
-        OUTFUNC_FILE = (outFunc != null) ? outFunc : "data/OutFunc.txt";
-        SYMBOL_FILE_BASE = "data/SymbolTable%d.txt";
+        String dp = (dataPath != null) ? dataPath: "data/";
+        DATA_PATH = findFile(dp);
+        TFUNC_FILE = new File(DATA_PATH, "TFunc.txt");
+        OUTFUNC_FILE = new File(DATA_PATH, "OutFunc.txt");
+        SYMBOL_FILE_BASE = "SymbolTable%d.txt";
     }
 
     /**
@@ -37,9 +41,8 @@ public class FileHandler_Main1 extends FileHandler {
      */
     public static FileHandler_Main1 createHandler(String[] args){
         switch(args.length){
-            case 0: return new FileHandler_Main1(null, null);
-            case 1: return new FileHandler_Main1(args[0], null);
-            case 2: default: return new FileHandler_Main1(args[0], args[1]);
+            case 0: case 1:case 2: return new FileHandler_Main1(null);
+            case 3: default: return new FileHandler_Main1(args[2]);
         }
     }
 
@@ -58,7 +61,7 @@ public class FileHandler_Main1 extends FileHandler {
     }
 
     public Map<Pair<HState, Character>, HState> getTFunc() throws IOException{
-        FileReader reader = new FileReader(findFile(TFUNC_FILE));
+        FileReader reader = new FileReader(TFUNC_FILE);
         StringBuilder sb = new StringBuilder();
         Map<Pair<HState, Character>, HState> map = new HashMap<>();
         int c, k = -1;
@@ -89,7 +92,7 @@ public class FileHandler_Main1 extends FileHandler {
     }
 
     public Map<Pair<HState, Character>, Character> getOutFunc() throws IOException{
-        FileReader reader = new FileReader(findFile(OUTFUNC_FILE));
+        FileReader reader = new FileReader(OUTFUNC_FILE);
         StringBuilder sb = new StringBuilder();
         Map<Pair<HState, Character>, Character> map = new HashMap<>();
         int c, k = -1;
@@ -119,9 +122,10 @@ public class FileHandler_Main1 extends FileHandler {
     }
 
     public Map<String, Integer> getSymbol(int i) throws IOException{
-        String file = String.format(SYMBOL_FILE_BASE, i);
+        String f = String.format(SYMBOL_FILE_BASE, i);
+        File file = new File(DATA_PATH, f);
 
-        FileReader reader = new FileReader(findFile(file));
+        FileReader reader = new FileReader(file);
         StringBuilder sb = new StringBuilder();
         Map<String, Integer> map = new HashMap<>();
         int c, k = -1;
