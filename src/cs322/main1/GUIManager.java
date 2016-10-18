@@ -40,6 +40,8 @@ public class GUIManager {
                 if(out != null)
                     textField.setText(hangeul.getOutput(hMealy, inputString.toString()));
                 else textField.setText("Not valid input. Press enter to clear");
+                textField.requestFocus();
+                textField.setCaretPosition(inputString.length());
                 System.out.println(inputString);
             }
 

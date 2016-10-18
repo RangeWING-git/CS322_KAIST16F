@@ -61,8 +61,9 @@ public class Hangeul {
                 else if(md2 > 0) md2 = 0;
                 else if(md > 0) md = 0;
                 else if(st > 0) st = 0;
-                else {
+                else if(output.length() > 0){
                     output.deleteCharAt(output.length()-1);
+                    q = hMealy.q0;
                 }
                 //String ss = ""+st+md+md2+lt+lt2 + (i < n-1 ? x.substring(i+1): "");
                 //append(output, getOutput(hMealy, ss));
@@ -126,8 +127,9 @@ public class Hangeul {
             if(c == '<'){
                 if(!l1.isEmpty()){
                     l1.deleteLast();
-                }else if(!l0.deleteLast()){
+                }else if(!l0.deleteLast() && output.length() > 0){
                     output.deleteCharAt(output.length()-1);
+                    q = hMealy.q0;
                 }
             }else if(hMealy.T.containsKey(pair)){
                 q = hMealy.T.get(pair);
