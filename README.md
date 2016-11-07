@@ -23,9 +23,10 @@ screenshots 폴더의 스크린샷(Execution_P1_2)을 참조하면 된다.
 이 프로그램은 키보드로 입력하는 문자를 읽어 한글로 조합해 출력한다.
 초성우선 모드와 받침우선 모드를 지원한다.
 Java에서 Console 실시간 input을 지원하지 않는 관계로 input 후 엔터를 누르면 output이 출력되는 형태로 제작하였고,
-백스페이스 키는 '<'로 입력하면 된다. GUI mode에서는 백스페이스도 지원한다.
+백스페이스 키는 '<'로 입력하면 된다. EXIT을 입력하여 종료할 수 있다.
+argument에 GUI를 입력하여 GUI mode로 들어갈 수 있으며, GUI mode에서는 백스페이스도 지원한다.
 허용되지 않은 case (e.g. 모음만 입력)에서는 "Not valid input"을 출력한다.
-screenshots 폴더의 스크린샷(Execution_Main1_<n>)을 참조하라.
+screenshots 폴더의 스크린샷(Execution_Main1_*)을 참조하라.
 
 ### Files
 * root
@@ -48,7 +49,7 @@ screenshots 폴더의 스크린샷(Execution_Main1_<n>)을 참조하라.
             * Hangeul.java
             * HMealy.java
             * HState.java
-    * bin (classes)
+    * bin
     * data
         * OutFunc.txt
         * TFunc.txt
@@ -94,4 +95,3 @@ Where the class files exists (e.g. bin folder or src folder after compile; look 
   * Do not use datapath option, unless it could not find the folder 'data'
   * example (TUI + 받침우선): `$ java cs322.main1.PMain1 0 `
   * example (GUI + 초성우선): `$ java cs322.main1.PMain1 1 GUI `
-

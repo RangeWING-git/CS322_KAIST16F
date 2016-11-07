@@ -22,6 +22,9 @@ public class DFA {
     public void addQ(Collection<? extends State> states){
         Q.addAll(states);
     }
+    public void addQ(State state) {
+        Q.add(state);
+    }
 
     public void addS(Collection<String> symbols){
         S.addAll(symbols);
@@ -30,10 +33,22 @@ public class DFA {
     public void addF(Collection<? extends State> states){
         F.addAll(states);
     }
+    public void addF(State state) {
+        F.add(state);
+    }
 
     public void addT(State fromState, String symbol, State toState){
         Pair<State, String> pair = new Pair<>(fromState, symbol);
         T.put(pair, toState);
+    }
+
+    public boolean isInQ(State state){
+        return Q.contains(state);
+    }
+
+    public State T(State fromState, String symbol){
+        Pair<State, String> pair = new Pair<>(fromState, symbol);
+        return T.get(pair);
     }
 
     public void setQ0(State q0){

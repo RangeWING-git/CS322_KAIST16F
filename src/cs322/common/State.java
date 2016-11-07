@@ -7,8 +7,8 @@ import java.util.ArrayList;
  * Definition of cs322.common.State
  */
 public class State {
-    private String name;
-    private Object output = null;
+    protected String name;
+    protected Object output = null;
     public State(String name){
         this.name = name;
     }
