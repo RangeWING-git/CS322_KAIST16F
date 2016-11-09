@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="663bce09-2c3a-4296-91df-63f7ac795e6d" name="Default" comment="Modified">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/common/E_NFA.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/common/StateN.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/p2_1/FileHandler_P2_1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/p2_1/P2_1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcase/e-nfa.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcase/m-dfa.txt" />
+    <list default="true" id="663bce09-2c3a-4296-91df-63f7ac795e6d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs322/common/DFA.java" afterPath="$PROJECT_DIR$/src/cs322/common/DFA.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs322/common/E_NFA.java" afterPath="$PROJECT_DIR$/src/cs322/common/E_NFA.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs322/common/State.java" afterPath="$PROJECT_DIR$/src/cs322/common/State.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs322/p2_1/FileHandler_P2_1.java" afterPath="$PROJECT_DIR$/src/cs322/p2_1/FileHandler_P2_1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs322/p2_1/P2_1.java" afterPath="$PROJECT_DIR$/src/cs322/p2_1/P2_1.java" />
     </list>
     <ignored path="CS322Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,35 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Hangeul.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs322/main1/Hangeul.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="206" column="46" selection-start-line="206" selection-start-column="46" selection-end-line="206" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="P2_1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs322/p2_1/P2_1.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="P1_1.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs322/p1_1/P1_1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="5" selection-start-line="17" selection-start-column="4" selection-end-line="36" selection-end-column="5" />
+              <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -72,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/src/cs322/p2_1/FileHandler_P2_1.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="86" column="58" selection-start-line="86" selection-start-column="58" selection-end-line="86" selection-end-column="58" />
+              <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -82,8 +55,44 @@
         <entry file="file://$PROJECT_DIR$/src/cs322/common/E_NFA.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="78" column="47" selection-start-line="78" selection-start-column="47" selection-end-line="78" selection-end-column="47" />
+              <caret line="108" column="35" selection-start-line="108" selection-start-column="35" selection-end-line="108" selection-end-column="35" />
+              <folding>
+                <element signature="e#2912#2913#0" expanded="true" />
+                <element signature="e#2986#2987#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="m-dfa.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testcase/m-dfa.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DFA.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cs322/common/DFA.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="225" column="0" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor vertical-scroll-proportion="0.78571427">
+                <caret line="95" column="18" selection-start-line="95" selection-start-column="18" selection-end-line="95" selection-end-column="18" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -92,57 +101,8 @@
         <entry file="file://$PROJECT_DIR$/testcase/e-nfa.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+              <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StateN.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs322/common/StateN.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
-              <folding>
-                <element signature="e#1642#1643#0" expanded="true" />
-                <element signature="e#1691#1692#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="State.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs322/common/State.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DFA.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/cs322/common/DFA.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5738636">
-              <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-              <folding>
-                <element signature="e#1041#1042#0" expanded="true" />
-                <element signature="e#1081#1082#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor vertical-scroll-proportion="0.0">
-                <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-                <folding />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -205,14 +165,16 @@
         <option value="$PROJECT_DIR$/src/cs322/main1/GUIManager.java" />
         <option value="$PROJECT_DIR$/src/cs322/main1/PMain1.java" />
         <option value="$PROJECT_DIR$/src/cs322/main1/Hangeul.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/cs322/p2_1/FileHandler_P1_2.java" />
-        <option value="$PROJECT_DIR$/src/cs322/common/State.java" />
         <option value="$PROJECT_DIR$/src/cs322/common/StateN.java" />
-        <option value="$PROJECT_DIR$/src/cs322/p2_1/P2_1.java" />
+        <option value="$PROJECT_DIR$/src/cs322/common/State.java" />
+        <option value="$PROJECT_DIR$/testcase/e-nfa.txt" />
         <option value="$PROJECT_DIR$/src/cs322/p2_1/FileHandler_P2_1.java" />
         <option value="$PROJECT_DIR$/src/cs322/common/E_NFA.java" />
+        <option value="$PROJECT_DIR$/testcase/e-nfa-t.txt" />
         <option value="$PROJECT_DIR$/src/cs322/common/DFA.java" />
+        <option value="$PROJECT_DIR$/src/cs322/p2_1/P2_1.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -420,9 +382,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -839,7 +801,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="cs322.p2_1.P2_1" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="testcase/e-nfa.txt" />
+      <option name="PROGRAM_PARAMETERS" value="testcase/e-nfa-t.txt" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -888,7 +850,11 @@
       <workItem from="1476758655902" duration="7385000" />
       <workItem from="1478350654890" duration="14001000" />
       <workItem from="1478494224213" duration="2000" />
-      <workItem from="1478494754814" duration="8257000" />
+      <workItem from="1478494754814" duration="20913000" />
+      <workItem from="1478595565363" duration="6425000" />
+      <workItem from="1478621417601" duration="3354000" />
+      <workItem from="1478672850723" duration="4068000" />
+      <workItem from="1478694884486" duration="4659000" />
     </task>
     <task id="LOCAL-00001" summary="Encoding modified, README added">
       <created>1474953278963</created>
@@ -932,11 +898,17 @@
       <option name="project" value="LOCAL" />
       <updated>1476784974006</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="E_NFA subset construction">
+      <created>1478503808922</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1478503808922</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103403000" />
+    <option name="totallyTimeSpent" value="134565000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-1088" width="1936" height="1056" extended-state="6" />
@@ -944,23 +916,23 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42214534" sideWeight="0.50323623" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39653304" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33586133" sideWeight="0.49676377" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14872068" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22654584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261105" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934355" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39869988" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1013,7 +985,8 @@
     <MESSAGE value="README" />
     <MESSAGE value="GUI added" />
     <MESSAGE value="Modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified" />
+    <MESSAGE value="E_NFA subset construction" />
+    <option name="LAST_COMMIT_MESSAGE" value="E_NFA subset construction" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1033,24 +1006,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor vertical-scroll-proportion="0.0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs322/p1_1/P1_1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testcase/output.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1062,10 +1017,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-          <folding>
-            <element signature="e#1041#1042#0" expanded="true" />
-            <element signature="e#1081#1082#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1102,10 +1054,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-          <folding>
-            <element signature="e#1041#1042#0" expanded="true" />
-            <element signature="e#1081#1082#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1128,10 +1077,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-          <folding>
-            <element signature="e#1041#1042#0" expanded="true" />
-            <element signature="e#1081#1082#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1161,10 +1107,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1041#1042#0" expanded="true" />
-            <element signature="e#1081#1082#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1307,9 +1250,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="76" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1320,24 +1260,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor vertical-scroll-proportion="0.0">
-            <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs322/common/FileHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22818792">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cs322/p1_2/FileHandler_P1_2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1345,10 +1267,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs322/p1_1/FileHandler_P1_1.java">
+    <entry file="file://$PROJECT_DIR$/src/cs322/common/StateN.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16778524">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.1590909">
+          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+          <folding>
+            <element signature="e#1642#1643#0" expanded="false" />
+            <element signature="e#1691#1692#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1357,7 +1283,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="206" column="46" selection-start-line="206" selection-start-column="46" selection-end-line="206" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1365,34 +1291,46 @@
     <entry file="file://$PROJECT_DIR$/src/cs322/p1_1/P1_1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="5" selection-start-line="17" selection-start-column="4" selection-end-line="36" selection-end-column="5" />
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs322/p1_1/FileHandler_P1_1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21052632">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cs322/common/State.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.6898496">
+          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs322/common/StateN.java">
+    <entry file="file://$PROJECT_DIR$/src/cs322/common/FileHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
-          <folding>
-            <element signature="e#1642#1643#0" expanded="true" />
-            <element signature="e#1691#1692#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-0.29699248">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcase/m-dfa.txt">
+    <entry file="file://$PROJECT_DIR$/src/cs322/common/DFA.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="225" column="0" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs322/p2_1/FileHandler_P2_1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1400,25 +1338,7 @@
     <entry file="file://$PROJECT_DIR$/src/cs322/p2_1/P2_1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs322/p2_1/FileHandler_P2_1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="86" column="58" selection-start-line="86" selection-start-column="58" selection-end-line="86" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcase/e-nfa.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+          <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
           <folding />
         </state>
       </provider>
@@ -1426,19 +1346,38 @@
     <entry file="file://$PROJECT_DIR$/src/cs322/common/E_NFA.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="47" selection-start-line="78" selection-start-column="47" selection-end-line="78" selection-end-column="47" />
+          <caret line="108" column="35" selection-start-line="108" selection-start-column="35" selection-end-line="108" selection-end-column="35" />
+          <folding>
+            <element signature="e#2912#2913#0" expanded="true" />
+            <element signature="e#2986#2987#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/m-dfa.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs322/common/DFA.java">
+    <entry file="file://$PROJECT_DIR$/testcase/e-nfa.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5738636">
-          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding>
-            <element signature="e#1041#1042#0" expanded="true" />
-            <element signature="e#1081#1082#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor vertical-scroll-proportion="0.78571427">
+            <caret line="95" column="18" selection-start-line="95" selection-start-column="18" selection-end-line="95" selection-end-column="18" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

@@ -1,9 +1,6 @@
 package cs322.p2_1;
 
-import cs322.common.E_NFA;
-import cs322.common.FileHandler;
-import cs322.common.Mealy;
-import cs322.common.State;
+import cs322.common.*;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -24,7 +21,10 @@ public class FileHandler_P2_1 extends FileHandler {
 
 
     public FileHandler_P2_1(){
-        this(null, null);
+        this(null);
+    }
+    public FileHandler_P2_1(String e_nfa){
+        this(e_nfa, "m-dfa.txt");
     }
     public FileHandler_P2_1(String e_nfa, String output){
         super(null, output);
@@ -38,8 +38,8 @@ public class FileHandler_P2_1 extends FileHandler {
      */
     public static FileHandler_P2_1 createHandler(String[] args){
         switch(args.length){
-            case 0: return new FileHandler_P2_1(null, null);
-            case 1: return new FileHandler_P2_1(args[0], null);
+            case 0: return new FileHandler_P2_1();
+            case 1: return new FileHandler_P2_1(args[0]);
             case 2: default: return new FileHandler_P2_1(args[0], args[1]);
         }
     }
@@ -93,4 +93,5 @@ public class FileHandler_P2_1 extends FileHandler {
         reader.close();
         return eNFA;
     }
+
 }

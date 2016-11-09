@@ -36,6 +36,7 @@ public class E_NFA extends DFA{
                 v.forEach(result::add);
             }
         });
+
         return result;
     }
 
@@ -61,6 +62,8 @@ public class E_NFA extends DFA{
         return result;
     }
 
+
+
     public DFA subsetConstruction() {
         HashMap<State, Set<State>> eStarMap = new HashMap<>();
         Q.forEach(q -> eStarMap.put(q, eStar(q)));
@@ -81,7 +84,9 @@ public class E_NFA extends DFA{
                         sn = new StateN();
                         map.put(k.getValue(), sn);
                     }
-                    sn.addAll(v);
+                    for (State w : v) {
+                        sn.addAll(eStar(w));
+                    }
                 }
             });
             map.forEach((k, v) -> {
@@ -98,6 +103,10 @@ public class E_NFA extends DFA{
         }
 
         return dfa;
+    }
+
+    public DFA m_DFA(){
+        return subsetConstruction().minimize().reduce().simplify();
     }
 
 }

@@ -52,7 +52,7 @@ public class State {
 
     @Override
     public String toString(){
-        return "cs322.common.State("+name+")";
+        return "State("+name+")";
     }
 
     @Override
