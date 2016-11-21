@@ -110,9 +110,9 @@ Where the class files exists (e.g. bin folder or src folder after compile; look 
     `$ java cs322.p2_1.P2_1 <E-NFA_FILE_PATH> <OUTPUT(M-DFA)_FILE_PATH>`
     * example: `$java cs322.p2_1.P2_1 ../testcase/e-nfa.txt ../m-dfa.txt`
 
-* Main-project 2:
-    `$java cs322.main2.PMain2 <RE_FILE_PATH> <OUTPUT(M-DFA)_FILE_PATH>`
-    * example: `$java cs322.main2.PMain2 ../testcase/re.txt ../m-dfa.txt`
+* Main-project 2 [Only for Windows]:
+    `$java -cp .;../lib/antlr-4.5.3-complete.jar cs322.main2.PMain2 <RE_FILE_PATH> <OUTPUT(M-DFA)_FILE_PATH>`
+    * example: `$java -cp .;../lib/antlr-4.5.3-complete.jar cs322.main2.PMain2 ../testcase/re.txt ../m-dfa.txt`
     * How to execute the parser generator, ANTLR4
         * 실제 개발 시에는 IntelliJ IDEA의 ANTLR plugin을 사용하여 parser generation을 수행하였지만, 
         command line에서 할 수 있는 방법을 소개한다. (Windows)
@@ -130,5 +130,4 @@ Where the class files exists (e.g. bin folder or src folder after compile; look 
         <Parsing할 RE>
         ^Z
         ```
-    
     

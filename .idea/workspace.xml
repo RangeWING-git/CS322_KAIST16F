@@ -2,39 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="663bce09-2c3a-4296-91df-63f7ac795e6d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/antlr-4.5.3-complete.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/antlr4.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grun.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/launch.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/ENFACreateVisitor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/FileHandler_PMain2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/PMain2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/antlr/RE.g4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/antlr/RE.tokens" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/antlr/REBaseListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/antlr/REBaseVisitor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/antlr/RELexer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/antlr/RELexer.tokens" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/antlr/REListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/antlr/REParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/antlr/REVisitor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/tree/AbstractASTVisitor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/tree/BuildASTVisitor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/tree/ClosureNode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/tree/ConcatenationNode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/tree/ExpNode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/tree/InfixExpNode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/tree/SymbolNode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs322/main2/tree/UnionNode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcase/re.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CS322Project.iml" afterPath="$PROJECT_DIR$/CS322Project.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs322/common/DFA.java" afterPath="$PROJECT_DIR$/src/cs322/common/DFA.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs322/common/E_NFA.java" afterPath="$PROJECT_DIR$/src/cs322/common/E_NFA.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs322/common/State.java" afterPath="$PROJECT_DIR$/src/cs322/common/State.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs322/p2_1/P2_1.java" afterPath="$PROJECT_DIR$/src/cs322/p2_1/P2_1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcase/m-dfa.txt" afterPath="$PROJECT_DIR$/testcase/m-dfa.txt" />
     </list>
     <ignored path="CS322Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -116,8 +85,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="947">
-                <caret line="122" column="71" selection-start-line="122" selection-start-column="71" selection-end-line="122" selection-end-column="71" />
+              <first_editor relative-caret-position="448">
+                <caret line="132" column="4" selection-start-line="132" selection-start-column="4" selection-end-line="132" selection-end-column="4" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -819,7 +788,7 @@
       <workItem from="1478700258149" duration="1004000" />
       <workItem from="1479711283436" duration="116000" />
       <workItem from="1479711440297" duration="799000" />
-      <workItem from="1479712270494" duration="20422000" />
+      <workItem from="1479712270494" duration="22862000" />
     </task>
     <task id="LOCAL-00001" summary="Encoding modified, README added">
       <created>1474953278963</created>
@@ -884,15 +853,22 @@
       <option name="project" value="LOCAL" />
       <updated>1478700032982</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Main project 2: RE to m-DFA">
+      <created>1479736401836</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1479736401836</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157026000" />
+    <option name="totallyTimeSpent" value="159466000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -906,7 +882,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14072494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14072494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32560706" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31325302" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -969,7 +945,8 @@
     <MESSAGE value="Modified" />
     <MESSAGE value="E_NFA subset construction" />
     <MESSAGE value="Pre-project 2-1: m-DFA" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pre-project 2-1: m-DFA" />
+    <MESSAGE value="Main project 2: RE to m-DFA" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main project 2: RE to m-DFA" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1430,8 +1407,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="947">
-            <caret line="122" column="71" selection-start-line="122" selection-start-column="71" selection-end-line="122" selection-end-column="71" />
+          <first_editor relative-caret-position="448">
+            <caret line="132" column="4" selection-start-line="132" selection-start-column="4" selection-end-line="132" selection-end-column="4" />
             <folding />
           </first_editor>
           <second_editor />
