@@ -14,6 +14,7 @@ public class P2_1 {
             FileHandler_P2_1 fileHandler = FileHandler_P2_1.createHandler(args);
             E_NFA e_nfa = fileHandler.readE_FNA();
             DFA dfa = e_nfa.m_DFA();
+            fileHandler.clearOutput();
             fileHandler.appendToOutput(dfa.toOutputString());
         }catch(IOException e){
             e.printStackTrace();

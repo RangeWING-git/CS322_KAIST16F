@@ -9,6 +9,9 @@ import java.util.ArrayList;
 public class State {
     protected String name;
     protected Object output = null;
+
+    private static int stateNumber = 0;
+
     public State(String name){
         this.name = name;
     }
@@ -48,6 +51,10 @@ public class State {
             list.add(new State(name));
         }
         return list;
+    }
+
+    public static State createNotDupState(){
+        return new State("q"+(stateNumber++));
     }
 
     @Override

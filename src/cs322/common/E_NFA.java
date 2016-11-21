@@ -22,6 +22,9 @@ public class E_NFA extends DFA{
         T.get(pair).add(toState);
     }
 
+    public Map<Pair<State, String>, Set<State>> getT_NFA(){
+        return T;
+    }
 
     public Set<State> eps(State q){
         StateN qn = new StateN();
@@ -105,8 +108,26 @@ public class E_NFA extends DFA{
         return dfa;
     }
 
+    public void clearQ0F(){
+        q0 = null;
+        F = new HashSet<>();
+    }
+
+
     public DFA m_DFA(){
         return subsetConstruction().minimize().reduce().simplify();
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString());
+        sb.append("\nNFA_T = \n");
+        T.forEach((k,v) ->
+            sb.append(String.format("(%s,%s,%s), ", k.getKey(), k.getValue(), v))
+        );
+        return sb.toString();
+
     }
 
 }

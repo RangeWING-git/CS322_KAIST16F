@@ -2,11 +2,10 @@
 * Author: 20150717 조영걸 [전산학부\] (rangewing@kaist.ac.kr)
 * Used Language: Java (1.8)
 * Written and Tested Environment
-    * Ubuntu 14.04.5 LTS, GNU/Linux 4.4.0-36-generic x86_64
-    * JDK 1.8.0_65, JRE 1.8.0_101
-    * Also tested on Windows 10 Pro, x64, JDK 1.8.0_65, JRE 1.8.0_77
+    * Ubuntu 14.04.5 LTS, GNU/Linux 4.4.0-36-generic x86_64, JDK 1.8.0_65, JRE 1.8.0_101
+    * Windows 10 Pro, x64, JDK 1.8.0_65, JRE 1.8.0_77
 * Charset: UTF-8
-* Last Update: Nov 9th, 2016
+* Last Update: Nov 21th, 2016
 
 ## Project 1
 ### 예비 프로젝트 1-1
@@ -34,32 +33,24 @@ screenshots 폴더의 스크린샷(Execution_Main1_*)을 참조하라.
 이 프로그램은 ε-NFA를 읽어 (partial) DFA로 변환한 후, 변환된 DFA를 minimize하여 m-DFA로 변환한다.
 screenshots 폴더의 스크린샷(Execution_P2_1)을 참조하라.
 
+###본 프로젝트 2
+이 프로그램은 Regular Expression을 읽어 ANTLR4를 이용하여 Parse Tree를 만든 후, 이를 AST로 변환하고, 
+AST를 traverse하며 ε-NFA로 변환한다. 변환된 ε-NFA는 예비 프로젝트 2-1를 이용하여 m-DFA로 변환한다.
+Dead State는 문자 '~'를 사용하여 나타낸다. screenshots 폴더의 스크린샷(Execution_Main2_*)을 참조하라.
+사용한 grammar file인 RE.g4와 ANTLR4로 generate된 java file은 모두 src의 cs322.main2.antr 패키지에 존재한다. 
+ANTLR4 폴더에도 복사하여 두었다. Symbol은 영어 대소문자 및 숫자를 사용할 수 있다.
+
 ## Files
 * root
     * src (source codes)
         * cs322.common
-            * DFA.java
-            * FileHandler.java
-            * Mealy.java
-            * Pair.java
-            * State.java
-            * E_NFA.java
-            * StateN.java
         * cs322.p1_1 (Pre-project 1-1)
-            * FileHandler_P1_1.java
-            * P1_1.java (Main)
         * cs322.p1_2 (Pre-project 1-2)
-            * FileHandler_P1_2.java
-            * P1_2.java (Main)
         * cs322.main1 (Main-project 1)
-            * PMain1.java (Main)
-            * FileHandler_Main1.java
-            * Hangeul.java
-            * HMealy.java
-            * HState.java
         * cs322.p2_1 (Pre-project 2-1)
-            * FileHandler_P2_1.java
-            * P2_1.java (Main)
+        * cs322.main2 (Main-project 2)
+            * antlr (ANTLR parser/lexer package)
+            * tree (Tree Node, AST visitor package)
     * bin
     * data
         * OutFunc.txt
@@ -78,7 +69,11 @@ screenshots 폴더의 스크린샷(Execution_P2_1)을 참조하라.
         * output_mealy.txt
         * e-nfa.txt
         * m-dfa.txt
+        * re.txt
+    * ANTLR4
     * README.md
+    * antlr4.bat
+    * grun.bat
 
 ### How to compile
 At the src folder,
@@ -86,6 +81,7 @@ At the src folder,
 * Pre-project 1-2: `$ javac cs322/p1_2/P1_2.java`
 * Main-project 1: `$ javac cs322/main1/PMain1.java`
 * Pre-project 2-1: `$ javac cs322/p2_1/P2_1.java`
+* Main-project 2: `$ javac cs322/main2/PMain2.java`
 * You should append `-encoding UTF-8` option when compiling on Windows.
 
 ### How to execute
@@ -110,6 +106,29 @@ Where the class files exists (e.g. bin folder or src folder after compile; look 
   * example (TUI + 받침우선): `$ java cs322.main1.PMain1 0 `
   * example (GUI + 초성우선): `$ java cs322.main1.PMain1 1 GUI `
 
-* Pre-projcet 2-1:
+* Pre-project 2-1:
     `$ java cs322.p2_1.P2_1 <E-NFA_FILE_PATH> <OUTPUT(M-DFA)_FILE_PATH>`
-    * example: `$java cs322.p2_1.P2_1 testcase/e-nfa.txt ./m-dfa.txt`
+    * example: `$java cs322.p2_1.P2_1 ../testcase/e-nfa.txt ../m-dfa.txt`
+
+* Main-project 2:
+    `$java cs322.main2.PMain2 <RE_FILE_PATH> <OUTPUT(M-DFA)_FILE_PATH>`
+    * example: `$java cs322.main2.PMain2 ../testcase/re.txt ../m-dfa.txt`
+    * How to execute the parser generator, ANTLR4
+        * 실제 개발 시에는 IntelliJ IDEA의 ANTLR plugin을 사용하여 parser generation을 수행하였지만, 
+        command line에서 할 수 있는 방법을 소개한다. (Windows)
+            * Unix/Linux는 https://github.com/antlr/antlr4/blob/master/doc/getting-started.md를 참고하여라.
+        * 루트 폴더에서 다음 cmd를 열고 다음 command를 실행한다.
+        ```
+        antlr4 ANTLR4/RE.g4 -o ANTLR4 -visitor -encoding UTF-8  
+        javac -cp .;ANTLR4;lib\antlr-4.5.3-complete.jar ANTLR4/RE*.java
+        ```
+        * ANTLR4 폴더에서 generate된 java file과 class file을 볼 수 있다. 다음과 같이 테스트할 수 있다.
+        -gui 옵션 대신 -tree 옵션을 사용할 수 있으며, 끝에 반드시 EOF를 붙여야 한다.
+        ```
+        cd ANTLR4
+        "../grun" RE e -gui
+        <Parsing할 RE>
+        ^Z
+        ```
+    
+    
