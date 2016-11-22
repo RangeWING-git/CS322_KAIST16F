@@ -32,6 +32,9 @@ public class BuildASTVisitor extends REBaseVisitor<ExpNode> {
     }
 
     @Override
+    public ExpNode visitEpsilon(REParser.EpsilonContext ctx) { return new EpsilonNode(); }
+
+    @Override
     public ExpNode visitParenthesize(REParser.ParenthesizeContext ctx) {
         return visit(ctx.e());
     }

@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class E_NFA extends DFA{
     protected Map<Pair<State, String>, Set<State>> T;
-    public static final String EMPTY = "E";
+    public static final String EMPTY = "ε";
 
     public E_NFA(){
         super();

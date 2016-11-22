@@ -1,5 +1,4 @@
-// Generated from C:/Users/range/OneDrive/Study/16F/CS322/Project/IdeaProject/src/cs322/main2/antlr\RE.g4 by ANTLR 4.5.3
-package cs322.main2.antlr;
+// Generated from ANTLR4/RE.g4 by ANTLR 4.5.3
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**

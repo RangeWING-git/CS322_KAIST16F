@@ -52,6 +52,20 @@ public class ENFACreateVisitor extends AbstractASTVisitor<E_NFA> {
     }
 
     @Override
+    public E_NFA visit(EpsilonNode node) {
+        E_NFA nfa = new E_NFA();
+        State qi = State.createNotDupState();
+        State qf = State.createNotDupState();
+        nfa.addQ(qi);
+        nfa.addQ(qf);
+        nfa.setQ0(qi);
+        nfa.addF(qf);
+        nfa.addT(qi, E_NFA.EMPTY, qf);
+
+        return nfa;
+    }
+
+    @Override
     public E_NFA visit(ConcatenationNode node) {
         E_NFA nfa = new E_NFA();
         E_NFA R = visit(node.left);
