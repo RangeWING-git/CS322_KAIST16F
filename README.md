@@ -56,8 +56,8 @@ At the src folder,
 * Pre-project 1-2: `$ javac cs322/p1_2/P1_2.java`
 * Main-project 1: `$ javac cs322/main1/PMain1.java`
 * Pre-project 2-1: `$ javac cs322/p2_1/P2_1.java`
-* Main-project 2: `$ javac cs322/main2/PMain2.java`
-* Main-project 3: `$ javac cs322/main3/PMain3.java`
+* Main-project 2: `$ javac -cp .;../lib/antlr-4.5.3-complete.jar cs322/main2/PMain2.java`
+* Main-project 3: `$ javac -cp .;../lib/antlr-4.5.3-complete.jar cs322/main3/PMain3.java`
 * You should append `-encoding UTF-8` option when compiling on Windows.
 
 ## How to execute
