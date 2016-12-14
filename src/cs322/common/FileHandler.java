@@ -73,4 +73,26 @@ public class FileHandler {
         writer.append(str);
         writer.close();
     }
+    public void appendTo(File file, String str) throws IOException{
+        FileWriter writer = new FileWriter(file, true);
+        writer.append(str);
+        writer.close();
+    }
+    public void clearFile(File file) {
+        if(file.exists()) file.delete();
+    }
+
+    public File findFile(String path){
+        File file = new File(path);
+        if(file.exists()) return file;
+        file = new File("./"+path);
+        if(file.exists()) return file;
+        file = new File("../"+path);
+        if(file.exists()) return file;
+        file = new File("../../"+path);
+        if(file.exists()) return file;
+        file = new File("../../../"+path);
+        if(file.exists()) return file;
+        return null;
+    }
 }

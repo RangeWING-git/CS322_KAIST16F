@@ -69,6 +69,11 @@ public class DFA {
     public void setQ0(State q0){
         this.q0 = q0;
     }
+
+    public int getQSize(){
+        return Q.size();
+    }
+
     /**
      * Checks whether the cs322.common.DFA is valid by checking all the state assigned is in the set Q
      * @return true when valid
@@ -97,6 +102,7 @@ public class DFA {
             pair = new Pair<>(q, x.get(i));
             if(dfa.T.containsKey(pair)){
                 q = dfa.T.get(pair);
+                //System.out.print(q);
             }else return false;
         }
         return dfa.F.contains(q);
@@ -161,6 +167,7 @@ public class DFA {
         return dfa;
     }
 
+    @Deprecated
     public DFA minimize(){
         DFA dfa = new DFA();
 
@@ -236,99 +243,76 @@ public class DFA {
         return dfa;
     }
 
-    @Deprecated
     public DFA minimize_table(){
-        final int QSIZE = Q.size();
-        ArrayList<State> list = new ArrayList<>(Q); //assign the indexes
-        int checkList[] = new int[QSIZE];
-        for(int i=0; i<QSIZE; i++) checkList[i] = i;
-
         DFA dfa = new DFA();
-        dfa.addS(S);
-
-        boolean table[][] = new boolean[QSIZE-1][QSIZE-1]; //mark is 'false'
-
-        int c = 0, pc;
-        for(int i=0; i<QSIZE-1; i++){
-            boolean isInF = F.contains(list.get(i+1));
-            for(int j=0; j<=i; j++){
-                if(F.contains(list.get(j)) != isInF){
-                    table[i][j] = false;
-                    c++;
-                }else table[i][j] = true;
+        int size = Q.size();
+        MinTable table = new MinTable(size);
+        MinTable pTable = null;
+        List<State> states = new ArrayList<>(Q);
+        //basis: by final state
+        F.forEach(f -> {
+            int i = states.indexOf(f);
+            for(int j=0; j<size; j++){
+                State q = states.get(j);
+                if(i != j && !F.contains(q)){
+                    table.set(i, j);
+                }
             }
-        }
+        });
 
-        for(int i=0; i<QSIZE; i++) System.out.print(list.get(i) + " ");
-        System.out.println();
-        for(int i=0; i<QSIZE-1; i++){
-            for(int j=0; j<=i; j++){
-                System.out.print(table[i][j]+"\t");
-            }
-            System.out.println();
-        }
-
-        do{
-            pc = c;
-
-            for(int i=0; i<QSIZE-1; i++){
-                for(int j=0; j<=i; j++){
-                    if(table[i][j]){
+        while(!table.equals(pTable)){
+            pTable = table.copy();
+            for(int i=1; i<size; i++) {
+                for (int j = 0; j < i; j++) {
+                    if(!table.get(i,j)){
+                        State p = states.get(i);
+                        State q = states.get(j);
                         for(String s : S){
-                            Pair<State, String> pair1 = new Pair<>(list.get(i+1), s);
-                            Pair<State, String> pair2 = new Pair<>(list.get(j), s);
-                            int k1 = list.indexOf(T.get(pair1));
-                            int k2 = list.indexOf(T.get(pair2));
-                            int r1 = Math.max(k1, k2);
-                            int r2 = Math.min(k1, k2);
-                            if((r2 < 0 && r1 >= 0) || (r1 != r2 && !table[r1-1][r2])) {
-                                table[i][j] = false;
-                                c--;
+                            State ps = T(p, s);
+                            State qs = T(q, s);
+                            if((ps != null && qs == null) || (ps == null && qs != null)){
+                                table.set(i, j);
                                 break;
+                            } else {
+                                if(ps != null && !ps.equals(qs) && table.get(states.indexOf(ps), states.indexOf(qs))){
+                                    table.set(i, j);
+                                    break;
+                                }
                             }
-
                         }
                     }
                 }
             }
-            System.out.println();
-            for(int i=0; i<QSIZE-1; i++){
-                for(int j=0; j<=i; j++){
-                    System.out.print(table[i][j]+"\t");
-                }
-                System.out.println();
-            }
-
-        }while(c != pc);
+        }
 
 
-        for(int i=0; i<QSIZE-1; i++){
-            for(int j=0; j<=i; j++){
-                if(table[i][j]) {
-                    checkList[i+1] = checkList[j];
+        int arr[] = new int[size];
+        for(int i=0; i<size; i++) arr[i] = i;
+        for(int i=1; i<size; i++) {
+            for (int j = 0; j < i; j++) {
+                if (!table.get(i, j)) {
+                    arr[i] = arr[j];
                 }
             }
         }
 
-        dfa.setQ0(list.get(list.indexOf(q0)));
-        for(int i=0; i<QSIZE; i++){
-            if(checkList[i] == i) {
-                State sq = list.get(i);
-                dfa.addQ(sq);
-                if(F.contains(sq)) dfa.addF(sq);
+        for(int i=0; i<size; i++){
+            if(arr[i] == i) {
+                State q = states.get(i);
+                dfa.addQ(q);
+                if(F.contains(q)) dfa.addF(q);
+
+                for(String s : S) {
+                    State t = T(q, s);
+                    if(t != null){
+                        dfa.addT(q, s, states.get(arr[states.indexOf(t)]));
+                    }
+                }
             }
         }
 
-        T.forEach((k, v) -> {
-            int idx = list.indexOf(k.getKey());
-            int idxv = list.indexOf(v);
-            if(checkList[idx] == idx){
-                dfa.addT(list.get(checkList[idx]), k.getValue(), list.get(checkList[idxv]));
-            }
-        });
-
-
-
+        dfa.addS(S);
+        dfa.setQ0(states.get(arr[states.indexOf(q0)]));
 
         return dfa;
     }
@@ -336,32 +320,27 @@ public class DFA {
     public DFA simplify(){
         DFA dfa = new DFA();
         ArrayList<State> qList = new ArrayList<>(Q);
-        ArrayList<State> sqList = new ArrayList<>(Q.size());
-
-        int i=1;
-        State q0s = new State("q0");
-        dfa.addQ(q0s);
-        sqList.add(q0s);
+        State[] sqList = new State[Q.size()];
         qList.remove(q0);
         qList.add(0, q0);
-        dfa.setQ0(q0s);
 
-        for(State q : qList){
-            if(q.equals(q0)) continue;
+        for(int i=0; i<Q.size(); i++) {
+            sqList[i] = new State("q" + i);
+            dfa.addQ(sqList[i]);
+        }
 
-            State sState = new State("q"+i);
-            if(q.equals(DEAD_STATE)) sState = DEAD_STATE;
-            else i++;
-            dfa.addQ(sState);
-            sqList.add(sState);
-            if(F.contains(q)) dfa.addF(sState);
+        dfa.setQ0(sqList[0]);
+        for(int i=0; i<Q.size(); i++){
+            State q = qList.get(i);
+            if(F.contains(q)) dfa.addF(sqList[i]);
+            for(String s : S){
+                State t = T(q, s);
+                if(t != null){
+                    dfa.addT(sqList[i], s, sqList[qList.indexOf(t)]);
+                }
+            }
         }
         dfa.addS(S);
-        T.forEach((k, v) -> {
-            State qs = sqList.get(qList.indexOf(k.getKey()));
-            State qt = sqList.get(qList.indexOf(v));
-            dfa.addT(qs, k.getValue(), qt);
-        });
         return dfa;
     }
 
@@ -398,6 +377,15 @@ public class DFA {
         return sb.toString();
     }
 
+    public Mealy toMealy(){
+        Mealy mealy = new Mealy();
+        mealy.setQ0(q0);
+        mealy.addQ(Q);
+        mealy.addS(S);
+        T.forEach((k, v) -> mealy.addT(k.getKey(), k.getValue(), v));
+        return mealy;
+    }
+
     @Override
     public String toString(){
         String Qs = "", Fs = "", Ss = "", Ts = "";
@@ -414,6 +402,81 @@ public class DFA {
                 "F = " + Fs + "\n" +
                 "q0 = " + q0 + "\n" +
                 "T = " + Ts;
+    }
+
+    /*
+     * i > j
+     * i: 1~n-1
+     * j: 0~n-2
+     */
+    class MinTable {
+        private boolean[][] table;
+        private int n;
+        MinTable(int size){
+            table = new boolean[size][size];
+            n = size;
+            for(int i=0; i<size; i++)
+                for(int j=0; j<size; j++)
+                    table[i][j] = false;
+        }
+        void check(int i, int j) throws IllegalArgumentException{
+            if(i<1 || i>n-1 || j<0 || j>n-2 || i <= j) throw new IllegalArgumentException(i+","+j);
+        }
+        private boolean getd(int i, int j) throws IllegalArgumentException{
+            check(i, j);
+            return table[i][j];
+        }
+        int getSize(){
+            return n;
+        }
+        private void setd(int i, int j) throws IllegalArgumentException{
+            check(i, j);
+            table[i][j] = true;
+        }
+        void set(int i, int j) throws IllegalArgumentException{
+            setd(Math.max(i, j), Math.min(i, j));
+        }
+        boolean get(int i, int j) throws IllegalArgumentException{
+            if(i == j) return false;
+            return getd(Math.max(i, j), Math.min(i, j));
+        }
+        MinTable copy(){
+            MinTable minTable = new MinTable(n);
+            for(int i=1; i<n; i++) {
+                for (int j = 0; j < i; j++) {
+                    if(get(i,j)) minTable.set(i,j);
+                }
+            }
+            return minTable;
+        }
+        @Override
+        public boolean equals(Object o){
+            if(o instanceof MinTable){
+                if(((MinTable) o).getSize() == n){
+                    for(int i=1; i<n; i++){
+                        for(int j=0; j<i; j++){
+                            if(get(i, j) != ((MinTable) o).get(i, j)) return false;
+                        }
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        @Override
+        public String toString(){
+            StringBuilder sb = new StringBuilder();
+            sb.append(n);
+            sb.append("\n");
+            for(int i=1; i<n; i++) {
+                for (int j = 0; j < i; j++) {
+                    sb.append(table[i][j] ? "■" : "□");
+                }
+                sb.append("\n");
+            }
+            return sb.toString();
+        }
     }
 
 

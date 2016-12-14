@@ -115,7 +115,7 @@ public class E_NFA extends DFA{
 
 
     public DFA m_DFA(){
-        return subsetConstruction().minimize().reduce().simplify();
+        return subsetConstruction().minimize_table().reduce().simplify();
     }
 
     @Override

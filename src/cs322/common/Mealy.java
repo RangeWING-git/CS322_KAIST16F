@@ -45,6 +45,32 @@ public class Mealy {
         this.q0 = q0;
     }
 
+
+    public State getQ0() { return q0; }
+    public Map<Pair<State, String>, State> getT(){
+        return T;
+    }
+    public Map<Pair<State, String>, String> getL(){
+        return L;
+    }
+    public Set<State> getQ() { return Q; }
+    public Set<String> getS() { return S; }
+    public Set<String> getP() { return P; }
+
+
+    public State T(State fromState, String symbol){
+        Pair<State, String> pair = new Pair<>(fromState, symbol);
+        return T.get(pair);
+    }
+
+
+    public String L(State fromState, String symbol){
+        Pair<State, String> pair = new Pair<>(fromState, symbol);
+        return L.get(pair);
+    }
+
+
+
     /**
      * Checks whether the cs322.common.Mealy is valid by checking all the state assigned is in the set Q
      * @return true when valid
