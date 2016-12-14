@@ -40,51 +40,27 @@ Dead State는 문자 '~'를 사용하여 나타낸다. screenshots 폴더의 스
 사용한 grammar file인 RE.g4와 ANTLR4로 generate된 java file은 모두 src의 cs322.main2.antr 패키지에 존재한다. 
 ANTLR4 폴더에도 복사하여 두었다. Symbol은 영어 대소문자 및 숫자를 사용할 수 있다.
 
-## Files
-* root
-    * src (source codes)
-        * cs322.common
-        * cs322.p1_1 (Pre-project 1-1)
-        * cs322.p1_2 (Pre-project 1-2)
-        * cs322.main1 (Main-project 1)
-        * cs322.p2_1 (Pre-project 2-1)
-        * cs322.main2 (Main-project 2)
-            * antlr (ANTLR parser/lexer package)
-            * tree (Tree Node, AST visitor package)
-    * bin
-    * data
-        * OutFunc.txt
-        * TFunc.txt
-        * SymbolTable0.txt
-        * SymbolTable1.txt
-        * SymbolTable2.txt
-        * SymbolTable3.txt
-    * screenshots
-    * testcase
-        * dfa.txt
-        * input.txt
-        * output.txt
-        * mealy.txt
-        * input_mealy.txt
-        * output_mealy.txt
-        * e-nfa.txt
-        * m-dfa.txt
-        * re.txt
-    * ANTLR4
-    * README.md
-    * antlr4.bat
-    * grun.bat
+## Project 3
+### 본 프로젝트 3
+이 프로그램은 KT 나랏글 자판을 이용하여 한글을 조합해 출력한다.
+본 프로젝트 2의 RE to m-DFA 변환 프로그램과 예비 프로젝트 1-2의 Mealy Machine을 사용하였다.
+초성우선 모드와 받침우선 모드를 지원하며, TUI 및 GUI (실시간 입력) 모드를 지원한다.
+키보드 왼쪽의 12키, 즉 123 qwe asd zxc 키를 사용하며 백스페이스 키는 '<'을 사용한다.
+GUI 모드에서는 Backspace 키 또한 사용 가능하다.
+허용되지 않는 case에 대해서는 "Invalid Input"을 출력한다.
+screenshots 폴더의 스크린샷 (Execution_Main3_*)을 참조하라.
 
-### How to compile
+## How to compile
 At the src folder,
 * Pre-project 1-1: `$ javac cs322/p1_1/P1_1.java`
 * Pre-project 1-2: `$ javac cs322/p1_2/P1_2.java`
 * Main-project 1: `$ javac cs322/main1/PMain1.java`
 * Pre-project 2-1: `$ javac cs322/p2_1/P2_1.java`
 * Main-project 2: `$ javac cs322/main2/PMain2.java`
+* Main-project 3: `$ javac cs322/main3/PMain3.java`
 * You should append `-encoding UTF-8` option when compiling on Windows.
 
-### How to execute
+## How to execute
 Where the class files exists (e.g. bin folder or src folder after compile; look at the screenshot),
 * Pre-project 1-1:
   `$ java cs322.p1_1.P1_1 <DFA_FILE_PATH> <INPUT_FILE_PATH> <OUTPUT_FILE_PATH>`
@@ -99,18 +75,18 @@ Where the class files exists (e.g. bin folder or src folder after compile; look 
   * INPUT_FILE_PATH = ./input.txt
   * OUTPUT_FILE_PATH = ./output.txt
 
-* Main-project 1:
+* Main-project 1:  
   `$ java cs322.main1.PMain1 <mode> <GUI/TUI(default)> <datapath>`
   * mode: 0 = 받침우선(Default), 1 = 초성우선
   * Do not use datapath option, unless it could not find the folder 'data'
   * example (TUI + 받침우선): `$ java cs322.main1.PMain1 0 `
   * example (GUI + 초성우선): `$ java cs322.main1.PMain1 1 GUI `
 
-* Pre-project 2-1:
+* Pre-project 2-1:  
     `$ java cs322.p2_1.P2_1 <E-NFA_FILE_PATH> <OUTPUT(M-DFA)_FILE_PATH>`
     * example: `$java cs322.p2_1.P2_1 ../testcase/e-nfa.txt ../m-dfa.txt`
 
-* Main-project 2 [Only for Windows]:
+* Main-project 2 [Only for Windows]:  
     `$java -cp .;../lib/antlr-4.5.3-complete.jar cs322.main2.PMain2 <RE_FILE_PATH> <OUTPUT(M-DFA)_FILE_PATH>`
     * example: `$java -cp .;../lib/antlr-4.5.3-complete.jar cs322.main2.PMain2 ../testcase/re.txt ../m-dfa.txt`
     * How to execute the parser generator, ANTLR4
@@ -130,4 +106,12 @@ Where the class files exists (e.g. bin folder or src folder after compile; look 
         <Parsing할 RE>
         ^Z
         ```
-    
+
+* Main-project 3:  
+  Similar with the main-project 1  
+  `$ java cs322.main3.PMain3 <mode> <GUI/TUI(default)> <datapath>`
+  * mode: 0 = 받침우선(Default), 1 = 초성우선
+  * Do not use datapath option, unless it could not find the folder 'data'
+    * example (TUI + 받침우선): `$ java cs322.main3.PMain3 0 `
+    * example (GUI + 초성우선): `$ java cs322.main3.PMain3 1 GUI `
+  * Or use run_p3.bat (on Windows)

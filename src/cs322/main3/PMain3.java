@@ -2,14 +2,9 @@ package cs322.main3;
 
 import cs322.common.DFA;
 import cs322.common.E_NFA;
-import cs322.common.FileHandler;
 import cs322.common.Mealy;
-import cs322.main1.FileHandler_Main1;
-import cs322.main1.HMealy;
-import cs322.main1.HState;
-import cs322.main1.Hangeul;
+import cs322.main1.*;
 import cs322.main2.ENFACreateVisitor;
-import cs322.main2.FileHandler_PMain2;
 import cs322.main2.antlr.RELexer;
 import cs322.main2.antlr.REParser;
 import cs322.main2.tree.BuildASTVisitor;
@@ -28,6 +23,20 @@ public class PMain3 {
         FileHandler_Main3 fileHandler = FileHandler_Main3.createHandler(args);
         Map<String, String> keymap;
         int mode = Hangeul.MODE_BATCHIM;
+        GUIManager guiManager;
+
+        if(args.length < 1){
+            System.out.println("USAGE: java cs322.main3.PMain3 <mode> <GUI/TUI>");
+            System.out.println("mode: 0 = BATCHIM-prior, 1 = CHOSUNG-prior");
+            System.out.println("Default mode = 0, TUI\n");
+        }else{
+            int a = Integer.parseInt(args[0]);
+            switch(a){
+                case 1: mode = Hangeul.MODE_CHOSUNG; break;
+                case 0:default: mode = Hangeul.MODE_BATCHIM; break;
+            }
+        }
+
 
         HMealy hMealy = new HMealy();
         FileHandler_Main1 handler = FileHandler_Main1.createHandler(args);
@@ -53,25 +62,32 @@ public class PMain3 {
             DFA dfa = fileHandler.readDFA();
             keymap = fileHandler.readKeyMap();
 
-            Scanner sc = new Scanner(System.in);
+            //start
 
-            while(true){
-                String s = sc.nextLine();
-                if(s.equals("`")) break;
-                String r = key2qwerty(dfa, keymap, s);
-                //System.out.println(r);
-                if(r == null){
-                    System.out.println("Not valid input");
-                }else {
-                    String out = hangeul.getOutput(hMealy, r);
-                    if (out != null)
-                        System.out.println("Output>\t" + hangeul.getOutput(hMealy, r));
-                    else System.out.println("Not valid mInput");
+            if(args.length > 1 && args[1].toLowerCase().equals("gui")){
+                guiManager = new GUIManager();
+                guiManager.addKeyListener(hangeul, hMealy, dfa, keymap);
+            }else {
+                Scanner sc = new Scanner(System.in);
+
+                while (true) {
+                    String s = sc.nextLine();
+                    if (s.equals("`")) break;
+                    String r = key2qwerty(dfa, keymap, s);
+                    //System.out.println(r);
+                    if (r == null) {
+                        System.out.println("Invalid input");
+                    } else {
+                        String out = hangeul.getOutput(hMealy, r);
+                        if (out != null)
+                            System.out.println("Output>\t" + hangeul.getOutput(hMealy, r));
+                        else System.out.println("Invalid mInput");
+                    }
+
                 }
 
+                sc.close();
             }
-
-            sc.close();
 
         }catch(Exception e){
             e.printStackTrace();
@@ -162,7 +178,7 @@ public class PMain3 {
         }
         return sb.reverse().toString();
     }
-    static String key2qwerty(DFA dfa, Map<String, String> keymap, String s){
+    public static String key2qwerty(DFA dfa, Map<String, String> keymap, String s){
         StringBuilder sb, sbr;
         boolean vw = false;
         PMealy mealy = new PMealy(dfa.toMealy());
