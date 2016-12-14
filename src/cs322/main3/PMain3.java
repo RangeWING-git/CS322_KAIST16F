@@ -37,6 +37,10 @@ public class PMain3 {
             }
         }
 
+        System.out.println("CS322 16F Project 3");
+        System.out.println("by Young-Geol Cho, 20150717, SoC");
+        System.out.printf("%s-prior mode executed [%s]\n", (mode == Hangeul.MODE_CHOSUNG ? "CHOSUNG" : "BATCHIM"), (args.length > 1 && args[1].equals("GUI"))?"GUI":"TUI");
+
 
         HMealy hMealy = new HMealy();
         FileHandler_Main1 handler = FileHandler_Main1.createHandler(args);

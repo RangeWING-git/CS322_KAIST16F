@@ -108,10 +108,10 @@ Where the class files exists (e.g. bin folder or src folder after compile; look 
         ```
 
 * Main-project 3:  
-  Similar with the main-project 1  
-  `$ java cs322.main3.PMain3 <mode> <GUI/TUI(default)> <datapath>`
+  Execute the following command at the root folder:  
+  `$ java -cp ./bin/;./lib/antlr-4.5.3-complete.jar cs322.main3.PMain3 <mode> <GUI/TUI(default)> <datapath>`
   * mode: 0 = 받침우선(Default), 1 = 초성우선
   * Do not use datapath option, unless it could not find the folder 'data'
-    * example (TUI + 받침우선): `$ java cs322.main3.PMain3 0 `
-    * example (GUI + 초성우선): `$ java cs322.main3.PMain3 1 GUI `
-  * Or use run_p3.bat (on Windows)
+    * example (TUI + 받침우선): `$ java -cp ./bin/;./lib/antlr-4.5.3-complete.jar cs322.main3.PMain3 0 `
+    * example (GUI + 초성우선): `$ java -cp ./bin/;./lib/antlr-4.5.3-complete.jar cs322.main3.PMain3 1 GUI `
+  * Or use run_p3.bat (on Windows, pre-set with GUI + 받침우선) 
